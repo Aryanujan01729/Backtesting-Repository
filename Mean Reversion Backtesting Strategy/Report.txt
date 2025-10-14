@@ -1,0 +1,39 @@
+1. Intuition
+
+The Momentum Crossover Strategy is based on a simple yet powerful concept in technical analysis — trend following.
+The idea is that:
+
+“An existing trend is more likely to continue than to reverse.”
+
+In this strategy, two moving averages of different lengths (for example, 20-day and 50-day) are compared:
+
+When the short-term moving average crosses above the long-term one → it signals a bullish trend → Buy.
+
+When the short-term crosses below the long-term → it signals a bearish trend → Sell or exit.
+
+This approach captures the momentum of price movement, allowing traders to ride large trends while avoiding sideways noise.
+
+2. Mathematical Foundation 
+
+Let P_t be the asset price at time t.
+We define two moving averages:
+
+Short-term moving average:
+MA_short(t) = (1 / n_s) * Σ from i=0 to n_s-1 of P_(t-i)
+
+Long-term moving average:
+MA_long(t) = (1 / n_l) * Σ from i=0 to n_l-1 of P_(t-i)
+
+where n_s < n_l.
+
+Trading Signal:
+S_t =  1   if  MA_short(t) > MA_long(t)
+S_t = -1   if  MA_short(t) < MA_long(t)
+
+Daily Strategy Return:
+R_t = S_(t-1) * ((P_t - P_(t-1)) / P_(t-1))
+
+Cumulative Return:
+Cumulative Return = Product over t of (1 + R_t) - 1
+
+
